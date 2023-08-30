@@ -31,7 +31,7 @@ const Countdown = () => {
     } 
     else {
       setCountdown({
-        years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0,
+        years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 // Time has passed
       });
       clearInterval(countdownInterval);
     }
@@ -61,6 +61,9 @@ const Countdown = () => {
       <DatePicker className='select' selected={date} onChange={handleChange} />
       <input className='current' type="time" value={time} onChange={handleTime} />
       <button className='start' onClick={handleCountdown}>Start Countdown</button>
+
+      // Conditionally renders elements
+  
       {countdown.years !== 0 && countdown.years !== undefined && (
         <p>{countdown.years} years</p>
       )}
